@@ -23,8 +23,11 @@ def menu():
 	while selection != 'y':
 		selection = input('Start poem thread? (y/n)')
 		percentage = int(input('How much of the poem to read (%)'))
-	t = Thread(target=reader)
-	t.start()
+		if percentage <= 100:
+			t = Thread(target=reader)
+			t.start()
+		else:
+			print('Too much poem')
 
 t2 = Thread(target=menu)
 t2.start()
