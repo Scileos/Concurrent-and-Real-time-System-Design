@@ -39,19 +39,18 @@ def iterate():
 
 def condition():
 	global number
-	number = int(input())
-	if number == 1:
-		cv.acquire()
-		print('Pausing output')
-		cv.wait()
+	while number != 2:
 		number = int(input())
-	if number == 0:
-		print('Resuming output')
-		cv.notifyAll()
-		cv.release()
-		number = int(input())	
-	if number == 2:
-		print ('Exiting')		
+		if number == 1:
+			cv.acquire()
+			print('Pausing output')
+			cv.wait()
+		if number == 0:
+			print('Resuming output')
+			cv.notifyAll()
+			cv.release()	
+		if number == 2:
+			print ('Exiting')		
 		
 				
 
