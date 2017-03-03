@@ -29,7 +29,7 @@ return 0;
 void stringSelector() 
 {
 	while (word != "exit") {
-	std::cin >> word >> std::endl;
+	std::cin >> word
 	}
 }
 
