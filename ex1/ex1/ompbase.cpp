@@ -7,15 +7,17 @@
 
 int main (void)
 {
-	string word;
+	string word = "";
 
-void stringSelector() {
+void stringSelector() 
+{
 	while (word != "exit") {
 	std::cin >> word >> std::endl;
 	}
 }
 
-void stringA() {
+void stringA() 
+{
 	while (word != "exit") {
 	std:: stringstream ss;
 	ss << word << "A";
@@ -24,7 +26,8 @@ void stringA() {
 }
 }
 
-void stringB() {
+void stringB() 
+{
 	while (word != "exit") {
 
 	std:: stringstream ss;
