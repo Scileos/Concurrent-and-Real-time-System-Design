@@ -10,8 +10,7 @@ string word = "";
 int main (void)
 {
 
-
-	#pragma omp secitions
+#pragma omp sections
 		{
 			{stringSelector(); }
 			#pragma omp section
