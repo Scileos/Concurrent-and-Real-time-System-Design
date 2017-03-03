@@ -9,6 +9,19 @@ int main (void)
 {
 	string word = "";
 
+
+	#pragma omp secitions
+		{
+			{stringSelector(); }
+			#pragma omp section
+			{stringA(); }
+			#pragma omp section
+			{stringB(); }
+		}
+		
+return 0;
+}
+
 void stringSelector() 
 {
 	while (word != "exit") {
@@ -35,16 +48,4 @@ void stringB()
 	std::string s = ss.str();
 	cout << s << endl;
 }
-}
-
-	#pragma omp secitions
-		{
-			{stringSelector(); }
-			#pragma omp section
-			{stringA(); }
-			#pragma omp section
-			{stringB(); }
-		}
-		
-return 0;
 }
