@@ -12,7 +12,7 @@ int main (void)
 		for(int x=0;x<n;x++) {
 			for(int y=0;y<m;y++) {
 				int add = x + y;
-				cout << add << endl;
+				std::cout << add << std::endl;
 			}
 		}
 		
