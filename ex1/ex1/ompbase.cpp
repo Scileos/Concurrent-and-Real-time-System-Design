@@ -14,7 +14,7 @@ void stringB();
 int main (void)
 {
 
-#pragma omp sections
+#pragma omp parallel sections
 		{
 			{stringSelector(); }
 			#pragma omp section
