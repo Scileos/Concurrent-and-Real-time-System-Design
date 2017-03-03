@@ -5,9 +5,10 @@
 #include <sstream>
 #include <string>
 
+string word = "";
+
 int main (void)
 {
-	string word = "";
 
 
 	#pragma omp secitions
