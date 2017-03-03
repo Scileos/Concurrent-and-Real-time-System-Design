@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-string word = "";
+std::string word = "";
 
 void stringSelector();
 void stringA();
