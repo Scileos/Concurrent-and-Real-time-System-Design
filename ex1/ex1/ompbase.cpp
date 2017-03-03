@@ -35,7 +35,7 @@ void stringA()
 	std:: stringstream ss;
 	ss << word << "A";
 	std::string s = ss.str();
-	cout << s << endl;
+	std::cout << s << std::endl;
 }
 }
 
@@ -46,6 +46,6 @@ void stringB()
 	std:: stringstream ss;
 	ss << word << "B";
 	std::string s = ss.str();
-	cout << s << endl;
+	std::cout << s << std::endl;
 }
 }
