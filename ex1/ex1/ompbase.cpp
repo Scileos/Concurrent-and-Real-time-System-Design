@@ -7,6 +7,10 @@
 
 string word = "";
 
+void stringSelector();
+void stringA();
+void stringB();
+
 int main (void)
 {
 
