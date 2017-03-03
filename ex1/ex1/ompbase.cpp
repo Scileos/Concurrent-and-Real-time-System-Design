@@ -2,18 +2,45 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#include <sstream>
+#include <string>
 
 int main (void)
 {
-	int n = 3;
-	int m = 3;
+	string word;
 
-	#pragma omp parallel for collapse(2)
-		for(int x=0;x<n;x++) {
-			for(int y=0;y<m;y++) {
-				int add = x + y;
-				std::cout << add << std::endl;
-			}
+void stringSelector() {
+	while (word != "exit") {
+	std::cin >> word >> std::endl;
+	}
+}
+
+void stringA() {
+	while (word != "exit") {
+	std:: stringstream ss;
+	ss << word << "A";
+	std::string s = ss.str();
+	cout << s << endl;
+}
+}
+
+void stringB() {
+	while (word != "exit") {
+
+	std:: stringstream ss;
+	ss << word << "B";
+	std::string s = ss.str();
+	cout << s << endl;
+}
+}
+
+	#pragma omp secitions
+		{
+			{stringSelector(); }
+			#pragma omp section
+			{stringA(); }
+			#pragma omp section
+			{stringB(); }
 		}
 		
 return 0;
