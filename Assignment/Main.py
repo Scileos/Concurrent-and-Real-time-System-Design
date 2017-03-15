@@ -45,11 +45,13 @@ def resetRover():
 	global wheelIndexes
 	global affectedWheels
 	global roverState
+	global Wheels
 
 	menuSelection = 0
 	wheelIndexes = []
 	affectedWheels = []
 	roverState = 'vectoring'
+	Wheels = [0, 0, 0, 0, 0, 0]
 
 	
 
