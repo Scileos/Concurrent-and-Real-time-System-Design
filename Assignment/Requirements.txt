@@ -1,0 +1,62 @@
+6 Wheels each with 4 possible states
+	- ok
+	- Blocked
+	- Freewheeling
+	- Sinking 
+
+	Ways to counter these issues
+
+	- Blocked // Stop, back up and try a different direction
+	- Freewheeling // Lower wheel
+	- Sinking // Raise wheel
+
+	Problems are split into two categories
+
+	- Easy to solve // One or more wheels have a problem and 1 attempt at a counter
+	- Hard to solve // < 1 attempts to counter and no solution
+
+	Hard problems should send a status update and wait for instructions
+
+	Success of a problem can be randomly generated or perhaps weighted on problem
+
+	Required Components
+
+	- Threaded menu system or a threaded random problem auto selector
+	- Problems
+					- Single Rock
+					- Single wheel Sinking
+					- Single wheel Freewheeling
+					- Multiple wheels encountering the same problem
+
+- Rover must maintain a log of problems encountered and solutions attempted even if they don't work
+
+- At least 5 rproblems must come up per run
+
+Thoughts
+
+Wheels will be an array with each index being a sperate wheel [0,0,0,0,0,0]
+The number will determine its status
+- 0 // Working
+- 1 // Blocked
+- 2 // Freewheeling
+- 3 // Sinking
+
+A problem once selected will be told how many wheels it applies to and their indexes
+
+Success
+
+- Rover makes it all the way overcoming the problems
+- A request for help from control 
+
+
+Plan
+
+
+Array of 6 values to be changed by a menu eg: [0,0,0,0,0,0]
+Menu will be threads waiting on a condition variable to activate
+Once a problem is selected activate that thread
+Thread should chose a number of wheels to effect, must give their index as well
+After thread completes, left with a new array eg: [0,1,1,0,0,0]
+Program should recognise the change in the array and try the relevant fix. Success will be randomised,
+If successful array is resest to [0,0,0,0,0,0], else send for help
+2m vector not actually measuered, just do at least 5 problems
