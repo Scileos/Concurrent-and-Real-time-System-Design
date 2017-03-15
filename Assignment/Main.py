@@ -116,6 +116,8 @@ def tryDifferentDirection():
 				cv.release()
 				time.sleep(1)
 			else:
+				for i in range(0,len(wheelIndexes)):
+					wheelIndexes[i] = wheelIndexes[i] + 1
 				logSuccess = 'Wheels ', str(wheelIndexes) , ' fixed by trying a new direction'
 				log.append(logSuccess)
 				resetRover()
@@ -145,6 +147,8 @@ def tryRaiseWheel():
 				cv.release()
 				time.sleep(1)
 			else:
+				for i in range(0,len(wheelIndexes)):
+					wheelIndexes[i] = wheelIndexes[i] + 1
 				logSuccess = 'Wheels ', str(wheelIndexes) , ' fixed by raising wheels'
 				log.append(logSuccess)
 				resetRover()
@@ -174,6 +178,8 @@ def tryLowerWheel():
 				cv.release()
 				time.sleep(1)
 			else:
+				for i in range(0,len(wheelIndexes)):
+					wheelIndexes[i] = wheelIndexes[i] + 1
 				logSuccess = 'Wheels ', str(wheelIndexes) , ' fixed by lowering wheels'
 				log.append(logSuccess)
 				resetRover()
@@ -221,7 +227,6 @@ def singleRock():
 				log.append('')
 				log.append(logProblem)
 				selectWheels()
-				print(Wheels)
 				print('Attempting to solve problems')
 
 				roverState = 'stopped'
@@ -253,7 +258,6 @@ def sinkingWheel():
 				log.append('')
 				log.append(logProblem)
 				selectWheels()
-				print(Wheels)
 				print('Attempting to solve problems')
 
 				roverState = 'stopped'
@@ -285,7 +289,6 @@ def freeWheeling():
 				log.append('')
 				log.append(logProblem)
 				selectWheels()
-				print(Wheels)
 				print('Attempting to solve problems')
 
 				roverState = 'stopped'
